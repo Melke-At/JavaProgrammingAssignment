@@ -7,12 +7,14 @@ public class PrimeNumber
         int end;
 
         do {
-            System.out.print("Enter two numbers: ");
+            System.out.println("Enter two numbers: ");
 
             start = Integer.parseInt(input.nextLine());
             end = Integer.parseInt(input.nextLine());
         }
         while(start > end);
+
+        System.out.print("Prime numbers between " + start + " and " + end + ":");
 
         for (int i = start; i <= end; i++) {
             boolean isPrime = true;
