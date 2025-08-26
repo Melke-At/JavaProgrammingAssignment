@@ -13,6 +13,7 @@ public class MultiplicationTable {
             int correctAnswer = num1 * num2;
 
             System.out.println(" problem " + i + ": what is " + num1 + " * " + num2 + "? ");
+
             int answer1 = input.nextInt();
 
             if (answer1 == correctAnswer) {
@@ -35,7 +36,5 @@ public class MultiplicationTable {
             }
             }
         }
-
-
 
 }
