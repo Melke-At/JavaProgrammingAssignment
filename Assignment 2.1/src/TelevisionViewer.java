@@ -39,7 +39,13 @@ public class TelevisionViewer {
                 myTV.pressOnOff();
             }
 
-            int channelsToWatch = (day == 1) ? 3 : 4;
+            int channelsToWatch;
+            if (day == 1) {
+                channelsToWatch = 3;
+            } else {
+                channelsToWatch = 4;
+            }
+
             for (int i = 0; i < channelsToWatch; i++) {
                 System.out.println("Watching channel " + myTV.getChannel());
                 myTV.nextChannel();
