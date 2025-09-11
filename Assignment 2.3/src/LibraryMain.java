@@ -5,6 +5,13 @@ public class LibraryMain {
         library.addBook(new Book("Fikir Eskemekabir ", "Hadis Alemayehu ", 1954  ));
         library.addBook(new Book("Oromay", "Bealu Girma", 1968));
         library.addBook(new Book("Yetekolefebet", "Dr. Mihiret Debebe", 2018));
+        library.addBook(new Book("Introduction to Java Programming", "John Smith", 2020));
+        library.addBook(new Book("Data Structures and Algorithms", "Jane Doe", 2018));
+        library.addBook(new Book("The Art of Fiction", "Alice Johnson", 2019));
+
+
+        library.borrowBook("Oromay");
+
 
         library.displayBooks();
 
@@ -13,6 +20,7 @@ public class LibraryMain {
         library.findBooksByAuthor("Esat woy Abeba");
         library.findBooksByAuthor("Bealu Girma");
         //library.findBooksByAuthor("Hadis Alemayehu ");
+
 
     }
 

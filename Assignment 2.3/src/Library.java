@@ -53,6 +53,25 @@ public class Library {
           if(!found) {
               System.out.println("not found ");
           }
+
+    }
+
+    public void borrowBook(String title) {
+        boolean found = false;
+
+        for (int i = 0; i < books.size(); i++) {
+            Book book = books.get(i);
+            if (book.getTitle().equalsIgnoreCase(title)) {
+                books.remove(i);
+                System.out.println("You borrowed: \"" + book.getTitle() + "\" by " + book.getAuthor());
+                found = true;
+                break;
+            }
+        }
+
+        if (!found) {
+            System.out.println("Book titled \"" + title + "\" not found in the library.");
+        }
     }
 
 
