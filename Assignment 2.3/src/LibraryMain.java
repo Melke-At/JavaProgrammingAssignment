@@ -6,10 +6,12 @@ public class LibraryMain {
         library.addBook(new Book("Oromay", "Bealu Girma", 1968));
         library.addBook(new Book("Yetekolefebet", "Dr. Mihiret Debebe", 2018));
 
+        library.displayBooks();
+
+
         library.findBooksByAuthor("Dr. Mihiret Debebe");
         library.findBooksByAuthor("Esat woy Abeba");
         library.findBooksByAuthor("Bealu Girma");
-        //library.displayBooks();
         //library.findBooksByAuthor("Hadis Alemayehu ");
 
     }

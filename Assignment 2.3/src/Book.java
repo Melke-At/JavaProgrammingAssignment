@@ -12,18 +12,12 @@ public class Book {
     public String getTitle() {
         return title;
     }
-
     public String getAuthor() {
         return author;
     }
 
     public int getPublicationYear() {
         return publicationYear;
-    }
-
-    @Override
-    public String toString() {
-        return "\"" + title + "\" by " + author + " (" + publicationYear + ")";
     }
 
 }
