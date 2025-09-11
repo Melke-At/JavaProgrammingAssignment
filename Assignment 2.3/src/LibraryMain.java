@@ -11,9 +11,7 @@ public class LibraryMain {
 
        library.borrowBook("Oromay");
         library.borrowBook("Introduction to Java Programming");
-
         //library.displayBooks();
-
         library.findBooksByAuthor("Dr. Mihiret Debebe");
         library.findBooksByAuthor("Esat woy Abeba");
         library.findBooksByAuthor("Bealu Girma");
@@ -29,9 +27,6 @@ public class LibraryMain {
 
         library.displayBooks();
 
-
-
     }
-
 }
 

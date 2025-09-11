@@ -1,20 +1,14 @@
 import java.util.ArrayList;
-
-
 public class Library {
-
     private ArrayList<Book> books = new ArrayList<>();
+    private double rating;
 
     public Library() {
         books = new ArrayList<>();
-
     }
-
     public void addBook(Book book) {
         books.add(book);
-
     }
-
     public void displayBooks() {
        // for (Book book : books)
         System.out.println("Library Catalog:");
@@ -69,30 +63,27 @@ public class Library {
         }
     }*/
 
-    public void borrowBook(String title){
+    public void borrowBook(String title) {
         boolean found = false;
 
-        for (int i = 0; i < books.size(); i++) {
-            Book book = books.get(i);
+        for (Book book : books) {
             if (book.getTitle().equalsIgnoreCase(title)) {
                 found = true;
-                if (!book.getTitle().equalsIgnoreCase(title)){
+                if (!book.isBorrowed()) {
                     book.borrowed();
                     System.out.println("You borrowed: \"" + book.getTitle() + "\" by " + book.getAuthor());
-                    break;
-                }else {
+                } else {
                     System.out.println("Sorry, \"" + book.getTitle() + "\" is already borrowed.");
                 }
-
+                break;
             }
-
-    }
-        if(!found){
+        }
+        if (!found) {
             System.out.println("Book titled \"" + title + "\" not found in the library.");
         }
+    }
 
-        }
-    public  void returnBook(String title){
+    public void returnBook(String title) {
         boolean found = false;
 
         for (Book book : books) {
@@ -100,12 +91,9 @@ public class Library {
                 found = true;
                 if (book.isBorrowed()) {
                     book.returnBook();
-                    //System.out.println("You returned: \"" + book.getTitle() + "\" by " + book.getAuthor());
-                    //break;
-            } else {
-                    //System.out.println("The book \"" + book.getTitle() + "\" was not borrowed.");
                     System.out.println("You returned: \"" + book.getTitle() + "\" by " + book.getAuthor());
-
+                } else {
+                    System.out.println("The book \"" + book.getTitle() + "\" was not borrowed.");
                 }
                 break;
             }
@@ -115,6 +103,7 @@ public class Library {
             System.out.println("Book titled \"" + title + "\" not found in the library.");
         }
     }
+
     public boolean isBookAvailable(String title) {
         for (Book book : books) {
             if (book.getTitle().equalsIgnoreCase(title)) {
@@ -123,7 +112,12 @@ public class Library {
         }
         return false;
     }
-
-
+    public void setRating(double rating) {
+        if (rating >= 0 && rating <= 5) {
+            this.rating = rating;
+        } else {
+            System.out.println("Invalid rating! Must be between 0 and 5.");
+        }
+    }
 
 }
