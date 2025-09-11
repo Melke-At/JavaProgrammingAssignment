@@ -12,17 +12,20 @@ public class LibraryMain {
        library.borrowBook("Oromay");
         library.borrowBook("Introduction to Java Programming");
 
-        library.displayBooks();
+        //library.displayBooks();
 
         library.findBooksByAuthor("Dr. Mihiret Debebe");
         library.findBooksByAuthor("Esat woy Abeba");
         library.findBooksByAuthor("Bealu Girma");
         library.findBooksByAuthor("Hadis Alemayehu ");
 
-        library.displayBooks();
+        //library.displayBooks();
 
         library.returnBook("Oromay");
         library.returnBook("Introduction to Java Programming");
+
+        System.out.println(library.isBookAvailable("Introduction to Java Programming")); // false
+        System.out.println(library.isBookAvailable("Nonexistent Book"));
 
         library.displayBooks();
 

@@ -92,29 +92,38 @@ public class Library {
         }
 
         }
-        public  void returnBook(String title){
-            boolean found = false;
+    public  void returnBook(String title){
+        boolean found = false;
 
-            for (Book book : books) {
-                if (book.getTitle().equalsIgnoreCase(title)) {
-                    found = true;
-                    if (book.isBorrowed()) {
-                        book.returnBook();
-                        //System.out.println("You returned: \"" + book.getTitle() + "\" by " + book.getAuthor());
-                        //break;
-                } else {
-                        //System.out.println("The book \"" + book.getTitle() + "\" was not borrowed.");
-                        System.out.println("You returned: \"" + book.getTitle() + "\" by " + book.getAuthor());
+        for (Book book : books) {
+            if (book.getTitle().equalsIgnoreCase(title)) {
+                found = true;
+                if (book.isBorrowed()) {
+                    book.returnBook();
+                    //System.out.println("You returned: \"" + book.getTitle() + "\" by " + book.getAuthor());
+                    //break;
+            } else {
+                    //System.out.println("The book \"" + book.getTitle() + "\" was not borrowed.");
+                    System.out.println("You returned: \"" + book.getTitle() + "\" by " + book.getAuthor());
 
-                    }
-                    break;
                 }
-            }
-
-            if (!found) {
-                System.out.println("Book titled \"" + title + "\" not found in the library.");
+                break;
             }
         }
+
+        if (!found) {
+            System.out.println("Book titled \"" + title + "\" not found in the library.");
+        }
+    }
+    public boolean isBookAvailable(String title) {
+        for (Book book : books) {
+            if (book.getTitle().equalsIgnoreCase(title)) {
+                return !book.isBorrowed();
+            }
+        }
+        return false;
+    }
+
 
 
 }
