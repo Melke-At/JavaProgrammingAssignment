@@ -45,18 +45,13 @@ public class Library {
                   System.out.println(" Title: " + book.title + " Author: " + book.author + " Publication Year: " + book.publicationYear);
 
                   found = true;
-                    }
-
-
-
+              }
             }
           if(!found) {
               System.out.println("not found ");
           }
-
     }
-
-    public void borrowBook(String title) {
+   /* public void borrowBook(String title) {
         boolean found = false;
 
         for (int i = 0; i < books.size(); i++) {
@@ -72,7 +67,54 @@ public class Library {
         if (!found) {
             System.out.println("Book titled \"" + title + "\" not found in the library.");
         }
+    }*/
+
+    public void borrowBook(String title){
+        boolean found = false;
+
+        for (int i = 0; i < books.size(); i++) {
+            Book book = books.get(i);
+            if (book.getTitle().equalsIgnoreCase(title)) {
+                found = true;
+                if (!book.getTitle().equalsIgnoreCase(title)){
+                    book.borrowed();
+                    System.out.println("You borrowed: \"" + book.getTitle() + "\" by " + book.getAuthor());
+                    break;
+                }else {
+                    System.out.println("Sorry, \"" + book.getTitle() + "\" is already borrowed.");
+                }
+
+            }
+
     }
+        if(!found){
+            System.out.println("Book titled \"" + title + "\" not found in the library.");
+        }
+
+        }
+        public  void returnBook(String title){
+            boolean found = false;
+
+            for (Book book : books) {
+                if (book.getTitle().equalsIgnoreCase(title)) {
+                    found = true;
+                    if (book.isBorrowed()) {
+                        book.returnBook();
+                        //System.out.println("You returned: \"" + book.getTitle() + "\" by " + book.getAuthor());
+                        //break;
+                } else {
+                        //System.out.println("The book \"" + book.getTitle() + "\" was not borrowed.");
+                        System.out.println("You returned: \"" + book.getTitle() + "\" by " + book.getAuthor());
+
+                    }
+                    break;
+                }
+            }
+
+            if (!found) {
+                System.out.println("Book titled \"" + title + "\" not found in the library.");
+            }
+        }
 
 
 }

@@ -9,17 +9,23 @@ public class LibraryMain {
         library.addBook(new Book("Data Structures and Algorithms", "Jane Doe", 2018));
         library.addBook(new Book("The Art of Fiction", "Alice Johnson", 2019));
 
-
-        library.borrowBook("Oromay");
-
+       library.borrowBook("Oromay");
+        library.borrowBook("Introduction to Java Programming");
 
         library.displayBooks();
-
 
         library.findBooksByAuthor("Dr. Mihiret Debebe");
         library.findBooksByAuthor("Esat woy Abeba");
         library.findBooksByAuthor("Bealu Girma");
-        //library.findBooksByAuthor("Hadis Alemayehu ");
+        library.findBooksByAuthor("Hadis Alemayehu ");
+
+        library.displayBooks();
+
+        library.returnBook("Oromay");
+        library.returnBook("Introduction to Java Programming");
+
+        library.displayBooks();
+
 
 
     }
