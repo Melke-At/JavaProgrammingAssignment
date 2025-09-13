@@ -56,6 +56,13 @@ public class LibraryMain {
             System.out.println("- " + review);
 
         }
+        System.out.println("Average Book Rating: " + library.getAverageBookRating());
+
+        Book mostReviewed = library.getMostReviewedBook();
+        if (mostReviewed != null) {
+            System.out.println("Most Reviewed Book: " + mostReviewed.getTitle() +
+                    " (" + mostReviewed.getReviews().size() + " reviews)");
+        }
         library.displayBooks();
 
     }

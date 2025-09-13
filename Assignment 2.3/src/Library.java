@@ -119,6 +119,39 @@ public class Library {
             System.out.println("Invalid rating! Must be between 0 and 5.");
         }
     }
+    public double getAverageBookRating() {
+        if (books.isEmpty()) {
+            return 0.0;
+        }
+
+        double totalRating = 0.0;
+        int count = 0;
+
+        for (Book book : books) {
+            if (book.getRating() > 0) {
+                totalRating += book.getRating();
+                count++;
+            }
+        }
+
+        return (count == 0) ? 0.0 : totalRating / count;
+    }
+
+    public Book getMostReviewedBook() {
+        if (books.isEmpty()) {
+            return null;
+        }
+
+        Book mostReviewed = books.get(0);
+
+        for (Book book : books) {
+            if (book.getReviews().size() > mostReviewed.getReviews().size()) {
+                mostReviewed = book;
+            }
+        }
+
+        return mostReviewed;
+    }
 
 
 }
