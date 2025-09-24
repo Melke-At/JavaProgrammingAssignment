@@ -1,4 +1,5 @@
-public class Customer implements Runnable {
+public
+class Customer implements Runnable {
     private Theater theater;
     private int numTickets;
     private String customerName;

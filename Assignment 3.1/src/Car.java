@@ -1,7 +1,7 @@
 public class Car {
     private double speed;
     private double gasolineLevel;
-    private String typeName;
+    String typeName;
 
     public Car(String typeName) {
         speed = 0; gasolineLevel = 0;
