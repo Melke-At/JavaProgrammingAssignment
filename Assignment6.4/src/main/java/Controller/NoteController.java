@@ -24,6 +24,15 @@ public class NoteController {
         addButton.setOnAction(event -> addNote());
     }
 
+    private void updateNotesDisplay() {
+        StringBuilder sb = new StringBuilder();
+        for (Note n : notebook.getNotes()) {
+            sb.append(n.toString());
+        }
+        notesDisplay.setText(sb.toString());
+    }
+
+    @FXML
     private void addNote() {
         String title = titleField.getText().trim();
         String content = contentArea.getText().trim();
@@ -38,11 +47,5 @@ public class NoteController {
         }
     }
 
-    private void updateNotesDisplay() {
-        StringBuilder sb = new StringBuilder();
-        for (Note n : notebook.getNotes()) {
-            sb.append(n.toString());
-        }
-        notesDisplay.setText(sb.toString());
-    }
+
 }
