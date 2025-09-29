@@ -9,7 +9,7 @@ public class GUI extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("resources/bmi_view.fxml").);
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/view.fxml"));
         Scene scene = new Scene(loader.load());
 
         primaryStage.setTitle("Simple Note Taking App");
@@ -17,7 +17,4 @@ public class GUI extends Application {
         primaryStage.show();
     }
 
-    public static void main(String[] args) {
-        launch(args);
-    }
 }

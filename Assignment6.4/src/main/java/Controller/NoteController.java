@@ -7,6 +7,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.Label;
 import Model.Note;
 import Model.Notebook;
+import javafx.scene.input.KeyEvent;
 
 public class NoteController {
 
@@ -46,6 +47,5 @@ public class NoteController {
             contentArea.clear();
         }
     }
-
 
 }

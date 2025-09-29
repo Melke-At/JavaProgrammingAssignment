@@ -6,7 +6,7 @@
 <VBox alignment="TOP_CENTER" prefHeight="500" prefWidth="400" spacing="10" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.NoteController">
 
     <TextField fx:id="titleField" onKeyTyped="#addNote" promptText="Enter note title" />
-    <TextArea fx:id="contentArea" onKeyPressed="#addNote" onKeyTyped="#getContent" prefRowCount="5" promptText="Write your note here..." />
+    <TextArea fx:id="contentArea" prefRowCount="5" promptText="Write your note here..." />
     <Button fx:id="addButton" onMouseClicked="#addNote" text="Add" />
     <Label text="Saved Notes:" />
     <TextArea fx:id="notesDisplay" editable="false" prefRowCount="15" />
