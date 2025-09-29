@@ -1,21 +1,12 @@
+import Controller.NoteController;
+import Model.Notebook;
+import View.*;
 import javafx.application.Application;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-public class Main extends Application {
-
-    @Override
-    public void start(Stage primaryStage) throws Exception {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("view/note_view.fxml"));
-        Scene scene = new Scene(loader.load());
-
-        primaryStage.setTitle("Simple Note Taking App");
-        primaryStage.setScene(scene);
-        primaryStage.show();
-    }
+public class Main {
 
     public static void main(String[] args) {
-        launch(args);
+        Application.launch(GUI.class);
     }
 }

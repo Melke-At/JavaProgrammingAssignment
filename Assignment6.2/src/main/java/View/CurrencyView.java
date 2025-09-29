@@ -1,12 +1,16 @@
 package View;
 
+import Controller.CurrencyController;
 import Model.Currency;
+import Model.CurrencyModel;
+import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.GridPane;
+import javafx.stage.Stage;
 
-public class CurrencyView {
+public class CurrencyView extends Application {
     private final TextField inputAmount = new TextField();
     private final TextField outputAmount = new TextField();
     private final ComboBox<Currency> fromCurrency = new ComboBox<>();
@@ -45,6 +49,18 @@ public class CurrencyView {
 
         return new Scene(grid, 400, 300);
     }
+
+    @Override
+    public void start(Stage stage) {
+        CurrencyModel model = new CurrencyModel();
+        CurrencyView view = new CurrencyView();
+        new CurrencyController(model, view);
+
+        stage.setTitle("Currency Converter");
+        stage.setScene(createScene());
+        stage.show();
+    }
+
 
     public TextField getInputAmount() { return inputAmount; }
     public TextField getOutputAmount() { return outputAmount; }
