@@ -66,7 +66,7 @@ public class Currency_ConverterDao {
         }
     }
 
-    public void persist(Currency_Converter curr) {
+    /*public void persist(Currency_Converter curr) {
         Connection conn = MariaDbConnection.getConnection();
         String sql = "INSERT INTO employee (first_name, last_name, email, salary) VALUES (?, ?, ?, ?)";
         try {
@@ -80,5 +80,5 @@ public class Currency_ConverterDao {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-    }
+    }*/
 }

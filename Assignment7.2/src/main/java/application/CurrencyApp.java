@@ -18,7 +18,7 @@ public class CurrencyApp {
         Currency_Converter curr = (Currency_Converter) currdao.getAllCurrency_Converter();
         System.out.println(curr.getCode() + " " + curr.getName());
 
-        currdao.persist(new Currency_Converter('4', "K", "Kroner", 11.0));
+        //currdao.persist(new Currency_Converter('4', "K", "Kroner", 11.0));
 
         datasource.MariaDbConnection.terminate();
     }
