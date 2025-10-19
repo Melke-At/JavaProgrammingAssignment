@@ -1,23 +1,16 @@
 public class Main {
     public static void main(String[] args) {
-        Car myCar = new Car("Family Car");
-        myCar.fillTank();
-        System.out.println("Created: " + myCar.getTypeName());
+        SportsCar ferrari = new SportsCar("Ferrari");
+        ferrari.fillTank();
+        ferrari.accelerate();
+        System.out.println(ferrari.getTypeName() + " speed: " + ferrari.getSpeed() + ", fuel: " + ferrari.getGasolineLevel());
 
-        myCar.accelerate();
-        System.out.println("Normal car speed: " + myCar.getSpeed());
-        System.out.println("Normal car fuel: " + myCar.getGasolineLevel());
-
-        SportsCar mySportsCar = new SportsCar("Ferrari");
-        mySportsCar.fillTank();
-        System.out.println("\nCreated: " + mySportsCar.getTypeName());
-
-        mySportsCar.accelerate();
-        System.out.println("Sports car speed after accelerate: " + mySportsCar.getSpeed());
-        System.out.println("Sports car fuel after accelerate: " + mySportsCar.getGasolineLevel());
-
-        mySportsCar.decelerate(5);
-        System.out.println("Sports car speed after decelerate: " + mySportsCar.getSpeed());
-        System.out.println("Sports car fuel after decelerate: " + mySportsCar.getGasolineLevel());
+        Bus cityBus = new Bus("City Bus", 50);
+        cityBus.fillTank();
+        cityBus.passengerEnter(30);
+        cityBus.accelerate();
+        System.out.println(cityBus.getTypeName() + " speed: " + cityBus.getSpeed() +
+                ", fuel: " + cityBus.getGasolineLevel() +
+                ", passengers: " + cityBus.getPassengers());
     }
 }

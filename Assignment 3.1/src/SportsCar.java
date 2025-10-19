@@ -4,52 +4,43 @@ public class SportsCar extends Car {
         super(typeName);
     }
 
+    public SportsCar(String typeName, int speed, double gasolineLevel) {
+        super(typeName, speed, gasolineLevel);
+    }
+
     @Override
     public void accelerate() {
         if (getGasolineLevel() > 0) {
+            double newSpeed = getSpeed() + 25;
+            double newFuel = getGasolineLevel() - 2;
+            if (newFuel < 0) newFuel = 0;
 
-            setSpeed(getSpeed() + 20);
-            consumeFuel(5);
+            updateState(newSpeed, newFuel);
         } else {
-            setSpeed(0);
+            updateState(0, 0);
         }
     }
 
     @Override
-    public void decelerate(int amount) {
+    void decelerate(int amount) {
         if (getGasolineLevel() > 0) {
-            if (amount > 0) {
-                setSpeed(Math.max(0, getSpeed() - (amount * 2)));
-                consumeFuel(2);
-            }
+            double newSpeed = Math.max(0, getSpeed() - (amount + 5));
+            updateState(newSpeed, getGasolineLevel());
         } else {
-            setSpeed(0);
+            updateState(0, 0);
         }
     }
 
-    private void consumeFuel(double amount) {
-        double newLevel = Math.max(0, getGasolineLevel() - amount);
-        setGasolineLevel(newLevel);
-    }
-
-    private void setSpeed(double speed) {
+    private void updateState(double speed, double fuel) {
         try {
-            java.lang.reflect.Field field = Car.class.getDeclaredField("speed");
-            field.setAccessible(true);
-            field.set(this, speed);
+            java.lang.reflect.Field speedField = Car.class.getDeclaredField("speed");
+            java.lang.reflect.Field fuelField = Car.class.getDeclaredField("gasolineLevel");
+            speedField.setAccessible(true);
+            fuelField.setAccessible(true);
+            speedField.set(this, speed);
+            fuelField.set(this, fuel);
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
-
-    private void setGasolineLevel(double gasolineLevel) {
-        try {
-            java.lang.reflect.Field field = Car.class.getDeclaredField("gasolineLevel");
-            field.setAccessible(true);
-            field.set(this, gasolineLevel);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
 }
